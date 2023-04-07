@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
     Pessoa outraPessoa;
 
     String dadosPessoa;
-    String dadosOutraPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
