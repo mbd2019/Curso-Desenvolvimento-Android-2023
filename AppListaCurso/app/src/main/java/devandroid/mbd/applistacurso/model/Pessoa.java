@@ -45,7 +45,6 @@ package devandroid.mbd.applistacurso.model;
 
         public void setTelefoneContato(String telefoneContato) {
             this.telefoneContato = telefoneContato;
-
         }
 
         @Override
@@ -57,4 +56,7 @@ package devandroid.mbd.applistacurso.model;
                     ", telefoneContato='" + telefoneContato + '\'' +
                     '}';
         }
+
+
+
     }

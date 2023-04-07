@@ -2,6 +2,8 @@ package devandroid.mbd.applistacurso.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
 import devandroid.mbd.applistacurso.R;
 import devandroid.mbd.applistacurso.model.Pessoa;
 
@@ -9,8 +11,8 @@ public class MainActivity extends AppCompatActivity {
 
     Pessoa pessoa;
     Pessoa outraPessoa;
-
     String dadosPessoa;
+    String dadosOutraPessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,17 @@ public class MainActivity extends AppCompatActivity {
         dadosPessoa += " Telefone de contato: ";
         dadosPessoa += pessoa.getTelefoneContato();
 
-        int parada=0;
+        dadosOutraPessoa = "Primeiro nome: ";
+        dadosOutraPessoa += outraPessoa.getPrimeiroNome();
+        dadosOutraPessoa += " Sobrenome: ";
+        dadosOutraPessoa += outraPessoa.getSobreNome();
+        dadosOutraPessoa += " Curso desejado: ";
+        dadosOutraPessoa += outraPessoa.getCursoDesejado();
+        dadosOutraPessoa += " Telefone de contato: ";
+        dadosOutraPessoa += outraPessoa.getTelefoneContato();
+
+        Log.i("POOAndroid", pessoa.toString());
+        Log.i("POOAndroid", outraPessoa.toString());
+
     }
 }
