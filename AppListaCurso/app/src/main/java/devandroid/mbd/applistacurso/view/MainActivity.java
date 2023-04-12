@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 editTelefone.setText("");
             }
         });
+
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
