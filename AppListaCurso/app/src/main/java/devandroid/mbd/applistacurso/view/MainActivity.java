@@ -89,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Salvo com sucesso. " + pessoa.toString(), Toast.LENGTH_SHORT).show();
 
                 controller.salvar(pessoa);
-
             }
         });
 

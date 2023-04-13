@@ -13,7 +13,6 @@ public class PessoaController {
     public String toString() {
 
         Log.d("MVC_Controller", "Controller iniciada..");
-
         return super.toString();
     }
 
