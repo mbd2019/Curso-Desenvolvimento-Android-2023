@@ -2,6 +2,7 @@ package devandroid.mbd.applistacurso.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,8 +16,9 @@ import devandroid.mbd.applistacurso.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
 
+    SharedPreferences preferences;
+    public static final String NOME_PREFERENCES = "pref_listavip";
     PessoaController controller;
-
     Pessoa pessoa;
     Pessoa outraPessoa;
     String dadosPessoa;
@@ -36,11 +38,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        preferences = getSharedPreferences(NOME_PREFERENCES,0);
+        SharedPreferences.Editor listaVip = preferences.edit();
+
         controller = new PessoaController();
-
         pessoa = new Pessoa();
-
         outraPessoa = new Pessoa();
+
         outraPessoa.setPrimeiroNome("Marta");
         outraPessoa.setSobreNome("Dantas");
         outraPessoa.setCursoDesejado("Java");
@@ -87,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setTelefoneContato(editTelefone.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Salvo com sucesso. " + pessoa.toString(), Toast.LENGTH_SHORT).show();
+
+                listaVip.putString("primeiroNome",pessoa.getPrimeiroNome());
+                listaVip.putString("sobreNome",pessoa.getSobreNome());
+                listaVip.putString("cursoDesejado",pessoa.getCursoDesejado());
+                listaVip.putString("telefoneContato",pessoa.getTelefoneContato());
+                listaVip.apply();
 
                 controller.salvar(pessoa);
             }
