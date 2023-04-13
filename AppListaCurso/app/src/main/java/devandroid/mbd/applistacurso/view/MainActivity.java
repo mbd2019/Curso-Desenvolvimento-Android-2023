@@ -1,6 +1,7 @@
 package devandroid.mbd.applistacurso.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,13 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         pessoa = new Pessoa();
 
-        // Atribuir conteúdo, dados, valores para o objeto
-        // Conforme o seu modelo, template
-        //pessoa.setPrimeiroNome("Marcos");
-        //pessoa.setSobreNome("Dantas");
-        //pessoa.setCursoDesejado("Android");
-        //pessoa.setTelefoneContato("16-9999-9999");
-
         outraPessoa = new Pessoa();
         outraPessoa.setPrimeiroNome("Marta");
         outraPessoa.setSobreNome("Dantas");
@@ -70,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 editTelefone.setText("");
             }
         });
+
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,8 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 pessoa.setCursoDesejado(editCursoDesejado.getText().toString());
                 pessoa.setTelefoneContato(editTelefone.getText().toString());
 
-                Toast.makeText(MainActivity.this, "Salvo com sucesso. "+pessoa.toString(), Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(MainActivity.this, "Salvo com sucesso. " + pessoa.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -110,6 +105,5 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("POOAndroid", pessoa.toString());
         Log.i("POOAndroid", outraPessoa.toString());
-
     }
 }
