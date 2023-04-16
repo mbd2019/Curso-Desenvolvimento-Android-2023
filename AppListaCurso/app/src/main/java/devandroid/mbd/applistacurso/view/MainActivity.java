@@ -17,6 +17,7 @@ import devandroid.mbd.applistacurso.model.Pessoa;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
+    SharedPreferences.Editor listaVip;
     public static final String NOME_PREFERENCES = "pref_listavip";
     PessoaController controller;
     Pessoa pessoa;
@@ -35,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences(NOME_PREFERENCES,0);
-        SharedPreferences.Editor listaVip = preferences.edit();
+        preferences = getSharedPreferences(NOME_PREFERENCES,00);
+        listaVip = preferences.edit();
 
         controller = new PessoaController();
         pessoa = new Pessoa();
@@ -67,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 editSobrenomeAluno.setText("");
                 editCursoDesejado.setText("");
                 editTelefone.setText("");
+
+                listaVip.clear();
+                listaVip.apply();
             }
         });
 
