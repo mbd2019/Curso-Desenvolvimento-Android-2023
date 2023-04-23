@@ -6,7 +6,6 @@ import java.util.List;
 import devandroid.mbd.applistacurso.model.Curso;
 
 public class CursoController {
-
     private List listCursos;
 
     public List getListaCursos(){
